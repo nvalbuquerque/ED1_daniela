@@ -78,3 +78,16 @@ fracao_t *multiplicacao(fracao_t *f1, fracao_t *f2) {
     
     return f;
 }
+
+fracao_t *divisao(fracao_t *f1, fracao_t *f2) {
+    if(f1 == NULL || f2 == NULL)
+        return NULL;
+    fracao_t *f = (fracao_t *)malloc(sizeof(fracao_t));
+    if(f == NULL)
+        return NULL;
+
+    f->num = f1->num * f2->den;  
+    f->den = f1->den * f2->num;
+    
+    return f;
+}
