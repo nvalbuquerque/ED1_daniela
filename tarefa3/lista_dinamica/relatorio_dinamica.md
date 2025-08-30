@@ -7,7 +7,7 @@
 
 ---
 
-# Relatório de Implementação da Lista Dinâmica de Livros
+# Relatório de Implementação da Lista Dinâmica
 
 ## 1. Qual estrutura foi implementada?
 - Foi implementada uma **Lista Linear Dinâmica**  
@@ -72,11 +72,11 @@ O cadastro é rápido, pois adiciona elementos no início ou fim da lista.
 ## 8. Resultados de Tempo de Operações (Exemplo)
 | Nº de livros | Cadastro (s) | Busca último livro (s) | Empréstimo último livro (s) |
 |--------------|--------------|-----------------------|-----------------------------|
-| 5            | 0.000001     | 0.000000              | 0.000001                    |
-| 50           | 0.000010     | 0.000005              | 0.000006                    |
-| 500          | 0.000120     | 0.000070              | 0.000080                    |
+| 5            | 0.001        | 0.000                 | 0.000                       |
+| 50           | 0.005        | 0.000                 | 0.000                       |
+| 500          | 0.021        | 0.000                 | 0.000                       |
 
-> Valores são aproximados e dependem da máquina e compilador utilizados.
+> Valores obtidos nos testes do programa. O tempo para busca e empréstimo do último livro foi praticamente zero devido ao tamanho pequeno da lista.
 
 ---
 
