@@ -75,7 +75,7 @@ O cadastro é rápido, pois adiciona elementos no início ou fim da lista.
 | 5            | 0.001        | 0.000                 | 0.000                       |
 | 50           | 0.005        | 0.000                 | 0.000                       |
 | 500          | 0.021        | 0.000                 | 0.000                       |
-
+| 5000         | 0.0296       | 0.000                 | 0.000                       |
 > Valores obtidos nos testes do programa. O tempo para busca e empréstimo do último livro foi praticamente zero devido ao tamanho pequeno da lista.
 
 ---

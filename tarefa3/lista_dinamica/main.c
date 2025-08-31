@@ -13,7 +13,7 @@ int main() {
     double tempo;
     Livro l, resultado;
 
-    int testes[] = {5, 50, 500};  // diferentes quantidades de livros
+    int testes[] = {5, 500, 5000};  // diferentes quantidades de livros
 
     for (int t = 0; t < 3; t++) {
         int n = testes[t];
