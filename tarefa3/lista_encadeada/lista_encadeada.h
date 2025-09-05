@@ -1,5 +1,5 @@
-#ifndef LISTA_DINAMICA_H
-#define LISTA_DINAMICA_H
+#ifndef LISTA_ENCADEADA_H
+#define LISTA_ENCADEADA_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,16 +29,16 @@ typedef struct No {
 typedef struct {
     No* inicio;   // Ponteiro para o primeiro nó
     int tamanho;  // Quantidade de elementos
-} ListaDinamica;
+} ListaEncadeada;
 
 
 // Operações
 // Inicializar a lista
-void inicializarLista(ListaDinamica* lista);
-int cadastrarLivro(ListaDinamica *lista, Livro livro);
-int buscarLivroPorISBN(ListaDinamica *lista, const char *isbn, Livro *livroEncontrado);
-int emprestarLivro(ListaDinamica *lista, const char *isbn, const char *usuario, const char *data);
-int devolverLivro(ListaDinamica *lista, const char *isbn);
-void listarLivros(ListaDinamica *lista);
+void inicializarLista(ListaEncadeada* lista);
+int cadastrarLivro(ListaEncadeada *lista, Livro livro);
+int buscarLivroPorISBN(ListaEncadeada *lista, const char *isbn, Livro *livroEncontrado);
+int emprestarLivro(ListaEncadeada *lista, const char *isbn, const char *usuario, const char *data);
+int devolverLivro(ListaEncadeada *lista, const char *isbn);
+void listarLivros(ListaEncadeada *lista);
 
 #endif

@@ -3,10 +3,10 @@
 #include <string.h>
 #include <time.h>
 
-#include "lista_dinamica.h"
+#include "lista_encadeada.h"
 
 int main() {
-    ListaDinamica biblioteca;
+    ListaEncadeada biblioteca;
     inicializarLista(&biblioteca);
 
     clock_t inicio, fim;
@@ -62,7 +62,7 @@ int main() {
 
 /* 
 int main() {
-    ListaDinamica biblioteca;
+    ListaEncadeada biblioteca;
     inicializarLista(&biblioteca);
 
     int opcao;

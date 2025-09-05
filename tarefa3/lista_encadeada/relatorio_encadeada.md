@@ -7,10 +7,10 @@
 
 ---
 
-# Relatório de Implementação da Lista Dinâmica
+# Relatório de Implementação da Lista Encadeada
 
 ## 1. Qual estrutura foi implementada?
-- Foi implementada uma **Lista Linear Dinâmica**  
+- Foi implementada uma **Lista Encadeada**  
 - Cada elemento (nó) contém um livro e um ponteiro para o próximo nó.  
 - A lista não possui tamanho fixo, permitindo inserir qualquer quantidade de livros durante a execução.
 
@@ -81,4 +81,4 @@ O cadastro é rápido, pois adiciona elementos no início ou fim da lista.
 ---
 
 **Conclusão:**  
-A lista dinâmica é eficiente para pequenas quantidades de dados e situações com inserções e remoções frequentes, mas apresenta limitações para buscas em grandes volumes de informações.
+A lista encadeada é eficiente para pequenas quantidades de dados e situações com inserções e remoções frequentes, mas apresenta limitações para buscas em grandes volumes de informações.

@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lista_dinamica.h"   
+#include "lista_encadeada.h"   
 
 
 // incializar lista - livros biblioteca
-void inicializarLista(ListaDinamica *lista) {
+void inicializarLista(ListaEncadeada *lista) {
     lista->inicio = NULL;  // Lista vazia (sem nós)
     lista->tamanho = 0;    // Tamanho inicial zero
 }
 
 //cadastrar livro - inserir livro no fim da lista
-int cadastrarLivro(ListaDinamica *lista, Livro livro){
+int cadastrarLivro(ListaEncadeada *lista, Livro livro){
     No *novo, *aux;
 	// novo = nó a inserir
 	// aux = ponteiro auxiliar para percorrer a lista
@@ -44,7 +44,7 @@ int cadastrarLivro(ListaDinamica *lista, Livro livro){
 }
 
 // busca por ISBN - retorna a posição e as infos do livro
-int buscarLivroPorISBN(ListaDinamica *lista, const char *isbn, Livro *livroEncontrado) {
+int buscarLivroPorISBN(ListaEncadeada *lista, const char *isbn, Livro *livroEncontrado) {
     No *aux = lista->inicio;
     int posicao = 0;
 
@@ -66,7 +66,7 @@ int buscarLivroPorISBN(ListaDinamica *lista, const char *isbn, Livro *livroEncon
 }
 
 // emprestar livro pelo isbn
-int emprestarLivro(ListaDinamica *lista, const char *isbn, const char *usuario, const char *data) {
+int emprestarLivro(ListaEncadeada *lista, const char *isbn, const char *usuario, const char *data) {
     No *aux = lista->inicio;
 
     while (aux != NULL) {
@@ -92,7 +92,7 @@ int emprestarLivro(ListaDinamica *lista, const char *isbn, const char *usuario, 
 }
 
 // devolver livro pelo isbn
-int devolverLivro(ListaDinamica *lista, const char *isbn) {
+int devolverLivro(ListaEncadeada *lista, const char *isbn) {
     No *aux = lista->inicio;
 
     while (aux != NULL) {
@@ -117,7 +117,7 @@ int devolverLivro(ListaDinamica *lista, const char *isbn) {
     return -1; // livro não encontrado
 }
 
-void listarLivros(ListaDinamica *lista) {
+void listarLivros(ListaEncadeada *lista) {
     No *aux = lista->inicio;
 
     if (aux == NULL) {
