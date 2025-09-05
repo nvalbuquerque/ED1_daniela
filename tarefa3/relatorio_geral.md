@@ -1,3 +1,11 @@
+# Sistema de Biblioteca Universitária
+
+## Grupo
+- Daniela Tamy Yuki  
+- Laura Klemba Cordeiro  
+- Nathalia Lyra Albuquerque  
+
+
 ## Qual estrutura escolheriam para um sistema real?
 
 Para uma implementação de um sistema de biblioteca, a melhor estrutura seria a **lista dinâmica baseada em array**. Isto porque:
