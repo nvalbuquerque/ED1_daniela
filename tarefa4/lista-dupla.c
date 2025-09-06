@@ -5,7 +5,7 @@
 // Função para criar uma nova lista
 ListaDupla* criarListaDupla() {
     // Aloca memória para a estrutura
-    ListaDupla* novaLista(ListaDupla*)malloc(sizeof(ListaDupla))
+    ListaDupla* novaLista = (ListaDupla*)malloc(sizeof(ListaDupla));
 
     if (novaLista != NULL) {
         // Inicializa lista vazia
@@ -19,12 +19,12 @@ ListaDupla* criarListaDupla() {
 
 // Função para destruir uma lista (libera a memória alocada)
 void destruirListaDupla(ListaDupla* lista) {
-    if (lista = NULL) {
+    if (lista == NULL) {
         return;
     }
 
     // Remover todos os nós da lista
-    No* atual = lista->cabeça;
+    No* atual = lista->cabeca;
     No* proximo;
 
     while (atual != NULL) {
@@ -43,7 +43,7 @@ int estaVazia(ListaDupla* lista) {
         return 0; // Uma lista inexistente também é vazia
     }
     
-    return (lista->cabeca != NULL);
+    return (lista->cabeca == NULL);
 }
 
 // Função para obter o tamanho da lista
@@ -129,7 +129,7 @@ void inserirPosicao(ListaDupla* lista, int valor, int posicao) {
     }
 
     // Verifica se a posição é válida
-    if (posicao < 0 || posicao > lista-tamanho) {
+    if (posicao < 0 || posicao > lista->tamanho) {
         printf("ERRO: posição inválida para inserção\n");
         return;
     }
@@ -241,7 +241,7 @@ int removerPosicao(ListaDupla* lista, int posicao) {
     }
 
     // Verifica se a posição é válida
-    if (posicao < 0 || posicao >= lista-tamanho) {
+    if (posicao < 0 || posicao >= lista->tamanho) {
         printf("ERRO: Posição inválida para remoção\n");
         return -1;
     }
@@ -278,15 +278,103 @@ int removerPosicao(ListaDupla* lista, int posicao) {
     return valor;
 }
 
-int removerValor(ListaDupla* lista, int valor);
+// remover o primeiro nó com valor especificado
+int removerValor(ListaDupla* lista, int valor){
+    if (lista == NULL || estaVazia(lista)) {
+        printf("ERRO: Lista vazia ou inexistente\n");
+        return -1;
+    }
+
+    No* atual = lista->cabeca;
+    int pos = 0;
+
+    while (atual != NULL) {
+        if (atual->dado == valor) {
+            // Caso especial: início
+            if (atual == lista->cabeca) {
+                return removerInicio(lista);
+            }
+            // Caso especial: fim
+            if (atual == lista->cauda) {
+                return removerFim(lista);
+            }
+            // Caso geral: no meio
+            atual->anterior->proximo = atual->proximo;
+            atual->proximo->anterior = atual->anterior;
+            int dado = atual->dado;
+            free(atual);
+            lista->tamanho--;
+            return dado;
+        }
+        atual = atual->proximo;
+        pos++;
+    }
+
+    printf("Valor %d não encontrado na lista\n", valor);
+    return -1;
+}
 
 // Operações de busca
-No* buscar(ListaDupla* lista, int valor);
-int buscarPosicao(ListaDupla* lista, int valor);
+//buscar nó pelo valor
+No* buscar(ListaDupla* lista, int valor){
+    if (lista == NULL || estaVazia(lista)) return NULL;
+
+    No* atual = lista->cabeca;
+    while (atual != NULL) {
+        if (atual->dado == valor) {
+            return atual; // Encontrado
+        }
+        atual = atual->proximo;
+    }
+
+    return NULL; // Não encontrado
+}
+
+
+int buscarPosicao(ListaDupla* lista, int valor){
+    if (lista == NULL || estaVazia(lista)) return -1;
+
+    No* atual = lista->cabeca;
+    int pos = 0;
+    while (atual != NULL) {
+        if (atual->dado == valor) {
+            return pos;
+        }
+        atual = atual->proximo;
+        pos++;
+    }
+
+    return -1; // Não encontrado
+}
 
 // Operações de exibição
-void exibirFrente(ListaDupla* lista);
-void exibirTras(ListaDupla* lista);
+void exibirFrente(ListaDupla* lista){
+    if (lista == NULL || estaVazia(lista)) {
+        printf("Lista vazia.\n");
+        return;
+    }
+
+    No* atual = lista->cabeca;
+    while (atual != NULL) {
+        printf("%d ", atual->dado);
+        atual = atual->proximo;
+    }
+    printf("\n");
+}
+
+void exibirTras(ListaDupla* lista){
+    if (lista == NULL || estaVazia(lista)) {
+        printf("Lista vazia.\n");
+        return;
+    }
+
+    No* atual = lista->cauda;
+    while (atual != NULL) {
+        printf("%d ", atual->dado);
+        atual = atual->anterior;
+    }
+    printf("\n");
+}
 
 
 

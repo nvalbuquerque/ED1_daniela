@@ -7,10 +7,10 @@ typedef struct No {
     struct No* proximo;
 } No;
 
-type def struct ListaDupla {
+typedef struct ListaDupla {
     No* cabeca;
     No* cauda;
-    int tamanho
+    int tamanho;
 } ListaDupla;
 
 // Funções básicas
