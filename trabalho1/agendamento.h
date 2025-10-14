@@ -27,9 +27,9 @@ typedef struct {
 
 // Funções principais
 Agendamento* criarAgendamento(char *cpf, char *sala, char *data, char *hora);
-void cadastrarAgendamento(ListaCabecalho *lista);
-void listarAgendamentosPorCPF(ListaCabecalho *lista, char *cpf);
-void listarAgendamentosPorSala(ListaCabecalho *lista, char *sala);
+void cadastrarAgendamento(ListaCabecalho *lista, char *cpf_paciente);
+void listarAgendamentosPorCPF(ListaCabecalho *lista, ListaPacientes *pacientes, char *cpf);
+void listarAgendamentosPorSala(ListaCabecalho *lista, ListaPacientes *pacientes, char *sala);
 int removerAgendamento(ListaCabecalho *lista, char *cpf, char *data);
 void mostrarAgendamento(void *dados);
 void exibirHistorico(ListaCabecalho *lista);
