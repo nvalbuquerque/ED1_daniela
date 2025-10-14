@@ -31,10 +31,8 @@ void cadastrarAgendamento(ListaCabecalho *lista);
 void listarAgendamentosPorCPF(ListaCabecalho *lista, char *cpf);
 void listarAgendamentosPorSala(ListaCabecalho *lista, char *sala);
 int removerAgendamento(ListaCabecalho *lista, char *cpf, char *data);
+void mostrarAgendamento(void *dados);
 void exibirHistorico(ListaCabecalho *lista);
 
-// Funções auxiliares
-int compararAgendamento(void *dados, void *chave);
-void mostrarAgendamento(void *dados);
 
 #endif
