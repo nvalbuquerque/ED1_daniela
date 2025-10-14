@@ -2,7 +2,7 @@
 // agendamento.c
 // Funções de agendamento
 // ===============================================
-
+#include "paciente.h"
 #include "agendamento.h"
 
 // -----------------------------------------------------

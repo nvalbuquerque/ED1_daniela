@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "paciente.h"
 #include "lista.h"
 
 // Estrutura de agendamento

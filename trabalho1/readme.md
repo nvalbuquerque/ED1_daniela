@@ -68,7 +68,18 @@ Interface interativa no terminal que permite ao usuário:
 
 ## 🧠 Estrutura de Dados Utilizada
 
-COMPLETAR
+### Lista encadeada simples
+- utilizada no módulo de Pacientes para armazenar dinamicamente os cadastros de forma simples e eficiente.
+- **Inserções dinâmicas:** Não há limite fixo de elementos.  
+- **Operações básicas suficientes:** O módulo de pacientes realiza principalmente cadastro e consultas, sem necessidade de manipulações complexas.  
+- **Leve e eficiente:** Menor sobrecarga estrutural, ideal para dados que só precisam crescer linearmente.
+
+
+### Lista encadeada com Cabeçalho
+- Armazenar e gerenciar agendamentos de consultas (CPF, sala, data e hora).
+- **Facilidade de manipulação:** A presença de um nó de cabeçalho simplifica inserções e remoções, evitando casos especiais para o início e fim da lista.  
+- **Flexibilidade:** Agendamentos são dados mais dinâmicos — com frequência de cadastro, cancelamento e listagem — exigindo uma estrutura mais robusta.  
+- **Organização:** O nó sentinela centraliza informações e facilita o gerenciamento do histórico completo de consultas.  
 
 
 ---
