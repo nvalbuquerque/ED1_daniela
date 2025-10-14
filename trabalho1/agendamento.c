@@ -20,23 +20,29 @@ Agendamento* criarAgendamento(char *cpf, char *sala, char *data, char *hora) {
 // -----------------------------------------------------
 // Cadastra um agendamento (insere na lista com cabeçalho)
 // -----------------------------------------------------
-void cadastrarAgendamento(ListaCabecalho *lista) {
-    char cpf[15], sala[10], data[11], hora[6];
+void cadastrarAgendamento(ListaCabecalho *lista, char *cpf_paciente) {
+    char cpf[15], sala[10], data[15], hora[8];
 
-    printf("\n--- CADASTRO DE AGENDAMENTO ---\n");
-    printf("CPF do paciente: ");
-    scanf("%s", cpf);
+   /* printf("CPF do paciente: ");
+    fgets(cpf, sizeof(cpf), stdin);
+    cpf[strcspn(cpf, "\n")] = 0; */
+
     printf("Sala: ");
-    scanf("%s", sala);
+    fgets(sala, sizeof(sala), stdin);
+    sala[strcspn(sala, "\n")] = 0;
+
     printf("Data (DD/MM/AAAA): ");
-    scanf("%s", data);
+    fgets(data, sizeof(data), stdin);
+    data[strcspn(data, "\n")] = 0;
+
     printf("Hora (HH:MM): ");
-    scanf("%s", hora);
+    fgets(hora, sizeof(hora), stdin);
+    hora[strcspn(hora, "\n")] = 0;
 
-    Agendamento *novo = criarAgendamento(cpf, sala, data, hora);
+    Agendamento *novo = criarAgendamento(cpf_paciente, sala, data, hora);
+    if (novo == NULL) return;
     inserirNoFimCabecalho(lista, novo);
-
-    printf("Agendamento cadastrado com sucesso!\n");
+    printf("Agendamento cadastrado\n");
 }
 
 // -----------------------------------------------------
